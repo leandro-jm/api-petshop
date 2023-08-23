@@ -39,9 +39,9 @@ export default class AnimalController {
     @Post("/")
     public async save(params: any)  {
 
-        const {nome, tipo, propriedade_id} = params;
+        const {nome, tipo, proprietario_id} = params;
 
-        const animais =  await Animal.create({nome, tipo, propriedade_id});
+        const animais =  await Animal.create({nome, tipo, proprietario_id});
         return JSON.stringify(animais)
     }
 
