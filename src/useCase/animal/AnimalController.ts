@@ -12,7 +12,7 @@ export default class AnimalController {
         return JSON.stringify(animais)
     }
 
-    @Get("/")
+    @Get("/{params}")
     public async get(params: any)  {
 
         const {id} = params;
@@ -26,7 +26,7 @@ export default class AnimalController {
         return animal
     }
 
-    @Get("/")
+    @Get("/proprietario/{params}")
     public async getAnimaisProprietario(params: any)  {
 
         const {id} = params;
@@ -36,7 +36,7 @@ export default class AnimalController {
 
     }
 
-    @Post("/")
+    @Post("/{params}")
     public async save(params: any)  {
 
         const {nome, tipo, proprietario_id} = params;
@@ -45,7 +45,7 @@ export default class AnimalController {
         return JSON.stringify(animais)
     }
 
-    @Put("/")
+    @Put("/{params}")
     public async update(params: any)  {
 
         const {id, nome, tipo, propriedade_id} = params;
@@ -60,7 +60,7 @@ export default class AnimalController {
         return { message: 'Animal atualizado com sucesso!' }
     }
 
-    @Delete("/")
+    @Delete("/{params}")
     public async remove(params: any)  {
 
         const {id} = params;

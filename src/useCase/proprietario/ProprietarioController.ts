@@ -13,7 +13,7 @@ export default class ProprietarioController {
         return JSON.stringify(proprietarios)
     }
 
-    @Get("/")
+    @Get("/{params}")
     public async get(params: any)  {
 
         const {id} = params;
@@ -27,7 +27,7 @@ export default class ProprietarioController {
         return proprietario
     }
 
-    @Post("/")
+    @Post("/{params}")
     public async save(params: any)  {
 
         const {nome, telefone} = params;
@@ -36,7 +36,7 @@ export default class ProprietarioController {
         return JSON.stringify(proprietarios)
     }
 
-    @Put("/")
+    @Put("/{params}")
     public async update(params: any)  {
 
         const {id, nome, telefone} = params;
@@ -51,7 +51,7 @@ export default class ProprietarioController {
         return { message: 'Proprietário atualizado com sucesso!' }
     }
 
-    @Delete("/")
+    @Delete("/{params}")
     public async remove(params: any)  {
 
         const {id} = params;

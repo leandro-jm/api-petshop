@@ -1,9 +1,14 @@
 import express from "express";
-import { router } from "./router";
 import swaggerUi from "swagger-ui-express";
 
+import {routerAnimal} from "./useCase/animal/AnimalRouter";
+import {routerProprietario} from "./useCase/proprietario/ProprietarioRouter";
+import { ReadableByteStreamController } from "stream/web";
+
 export class App{
-    
+  
+  //TODO: IMplementar log.
+
   public server: express.Application = express();
 
   constructor(){
@@ -19,7 +24,8 @@ export class App{
   }
 
   private router(){
-    this.server.use(router);
+   this.server.use("/animal", routerAnimal);
+   this.server.use("/proprietario", routerProprietario);
   }
 
   private swagger(){
