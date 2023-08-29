@@ -7,3 +7,4 @@ module.exports = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, pro
   host: process.env.DB_URL,
   dialect: 'postgres',
 });
+ 

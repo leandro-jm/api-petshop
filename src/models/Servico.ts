@@ -1,31 +1,31 @@
 import { DataTypes } from "sequelize";
 
-const dbAnimal = require('../config/DatabaseSequelize');
+const dbServico = require('../config/DatabaseSequelize');
 
-export const Animal = dbAnimal.define('Animal', {
-  animal_id: {
+const Servico = dbServico.define('Servico', {
+  servico_id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true
   },
-  nome: {
+  descricao: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  tipo: {
-    type: DataTypes.STRING,
+  valor: {
+    type: DataTypes.NUMBER,
     allowNull: false,
   },
-  proprietario_id: {
+  animal_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
   }
 },
 {
-  tableName: "animal",
+  tableName: "servico",
   timestamps: false
 }
 );
 
-module.exports = Animal;
+module.exports = Servico;

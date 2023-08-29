@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
-const dbProprietario = require('../config/database');
+
+const dbProprietario = require('../config/DatabaseSequelize');
 
 const Proprietario = dbProprietario.define('Proprietario', {
   proprietario_id: {

@@ -3,7 +3,7 @@ import swaggerUi from "swagger-ui-express";
 
 import {routerAnimal} from "./useCase/animal/AnimalRouter";
 import {routerProprietario} from "./useCase/proprietario/ProprietarioRouter";
-import { ReadableByteStreamController } from "stream/web";
+import {routerServico} from "./useCase/servico/ServicoRouter"
 
 export class App{
   
@@ -24,8 +24,9 @@ export class App{
   }
 
   private router(){
-   this.server.use("/animal", routerAnimal);
-   this.server.use("/proprietario", routerProprietario);
+    this.server.use("/animal", routerAnimal);
+    this.server.use("/proprietario", routerProprietario);
+    this.server.use("/servico", routerServico);
   }
 
   private swagger(){
